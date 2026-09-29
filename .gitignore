@@ -1,30 +1,70 @@
-# IDE
+# ==========================================
+# IntelliJ IDEA Settings
+# ==========================================
 .idea/
 *.iml
+*.ipr
+*.iws
+out/
+.shelf/
 
-# Compiled class file
+# ==========================================
+# Build Tools & Artifacts
+# ==========================================
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# Note: Keep !.mvn/wrapper/maven-wrapper.jar if you want to commit the wrapper
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ==========================================
+# Java & Spring Boot Specifics
+# ==========================================
 *.class
-
-# Log file
 *.log
-
-# BlueJ files
 *.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+lnx/
+cores/
 hs_err_pid*
-replay_pid*
 
+# Spring Boot Tooling Cache
+.sts4-cache/
+.springBeans
+
+# ==========================================
+# Sensitive Configuration & Environment Files
+# ==========================================
+# Exclude local profiles containing database credentials, API keys, etc.
+.env
+*.properties.local
+*.yml.local
+*secret*
+
+# If you explicitly want to keep production configs out of Git:
+# application-local.properties
+# application-dev.properties
+
+# ==========================================
+# Operating System Files
+# ==========================================
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/

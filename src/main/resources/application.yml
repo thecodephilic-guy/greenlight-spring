@@ -1,0 +1,15 @@
+server:
+  port: 4000
+  shutdown: graceful
+
+spring:
+  application:
+    name: greenlight-spring
+  profiles:
+    active: dev
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+app:
+  version: "1.0.0"
+  env: "development"
