@@ -1,4 +1,4 @@
-package world.sohail.greenlight_spring.system.dto;
+package world.sohail.greenlight_spring.dto;
 
 public record HealthcheckResponse(
         String status,

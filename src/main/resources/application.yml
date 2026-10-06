@@ -2,14 +2,25 @@ server:
   port: 4000
   shutdown: graceful
 
-spring:
-  application:
-    name: greenlight-spring
-  profiles:
-    active: dev
-  lifecycle:
-    timeout-per-shutdown-phase: 20s
-
 app:
   version: "1.0.0"
   env: "development"
+  mailer:
+    sender: "Greenlight <no-reply@sohail.world>"
+
+spring:
+  application:
+    name: greenlight-spring
+  datasource:
+    url: ${NEON_DB_URL}
+    username: ${NEON_DB_USER}
+    password: ${NEON_DB_PASSWORD}
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+  flyway:
+    enabled: false

@@ -5,5 +5,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "app")
 public record AppProperties (
 	String version,
-	String env
-){}
+	String env,
+	MailerProperties mailer
+){
+	public record MailerProperties(String sender) {}
+}
