@@ -19,8 +19,8 @@ spring:
     timeout-per-shutdown-phase: 20s
   jpa:
     open-in-view: false
+    show-sql: true
     hibernate:
-      ddl-auto: none
-    show-sql: false
+      ddl-auto: validate
   flyway:
-    enabled: false
+    enabled: true
