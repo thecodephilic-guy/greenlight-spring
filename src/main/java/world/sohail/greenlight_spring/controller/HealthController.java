@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import world.sohail.greenlight_spring.config.AppProperties;
+import world.sohail.greenlight_spring.dto.ApiResponse;
 import world.sohail.greenlight_spring.dto.HealthcheckResponse;
 
 @RestController
@@ -19,8 +20,8 @@ public class HealthController {
     }
 
     @GetMapping("/healthcheck")
-    public ResponseEntity<HealthcheckResponse> healthcheck() {
-        HealthcheckResponse response = new HealthcheckResponse(
+    public ResponseEntity<ApiResponse<HealthcheckResponse>> healthcheck() {
+        HealthcheckResponse data = new HealthcheckResponse(
                 "available",
                 appProperties.env(),
                 appProperties.version()
@@ -28,6 +29,6 @@ public class HealthController {
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(response);
+                .body(ApiResponse.success("server stats", data));
     }
 }
